@@ -10,15 +10,15 @@ namespace ShishovLab1
     /// This class contains registration methods and Click eventhandlers for the
     /// Petrel Menu extension.
     /// </summary>
-    public static class Lab1MenuItem
+    public static class MenuExtension
     {
-        public static void AddNewMenuItemsUnderLabs1()
+        public static void InitMenu()
         {
-            PetrelMenuItem Labs1 = new PetrelMenuItem("Labs");
-            PetrelButtonTool RunLab11 = new PetrelButtonTool("Run Lab 1", Lab1MenuItem.RunLab11_ToolClick);
-            Labs1.AddTool(RunLab11);
+            var item = new PetrelMenuItem("Shishov plugin");
+            var RunLab11 = new PetrelButtonTool("Run Lab 1", MenuExtension.RunLab11_ToolClick);
+            item.AddTool(RunLab11);
 
-            PetrelSystem.ToolService.AddTopLevelMenu(Labs1);
+            PetrelSystem.ToolService.AddTopLevelMenu(item);
         }
 
         #region Toolbutton click eventhandlers

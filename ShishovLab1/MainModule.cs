@@ -10,9 +10,9 @@ namespace ShishovLab1
     /// This class will control the lifecycle of the Module.
     /// The order of the methods are the same as the calling order.
     /// </summary>
-    public class Module : IModule
+    public class MainModule : IModule
     {
-        public Module()
+        public MainModule()
         {
             PetrelLogger.InfoOutputWindow("Module ctor");
         }
@@ -36,6 +36,11 @@ namespace ShishovLab1
         public void Integrate()
         {
             PetrelLogger.InfoOutputWindow("Module integration");
+            
+            // Register MainWorkstep
+            ShishovLab2Workstep mainworkstepInstance = new ShishovLab2Workstep();
+            PetrelSystem.WorkflowEditor.Add(mainworkstepInstance);
+            PetrelSystem.ProcessDiagram.Add(new Slb.Ocean.Petrel.Workflow.WorkstepProcessWrapper(mainworkstepInstance), "Plug-ins");
         }
 
         /// <summary>
@@ -47,7 +52,7 @@ namespace ShishovLab1
         {
 
             // TODO:  Add Module.IntegratePresentation implementation
-            Lab1MenuItem.AddNewMenuItemsUnderLabs1();
+            MenuExtension.InitMenu();
         }
 
         /// <summary>

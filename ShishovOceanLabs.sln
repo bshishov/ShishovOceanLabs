@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShishovLab1", "ShishovLab1\ShishovLab1.csproj", "{829A40D6-F51E-4081-BE47-0F386D2EAC6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShishovPlugin", "ShishovLab1\ShishovPlugin.csproj", "{829A40D6-F51E-4081-BE47-0F386D2EAC6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

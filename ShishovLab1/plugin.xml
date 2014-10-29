@@ -6,11 +6,11 @@
   <PluginUri>http://shishov.no-ip.org/</PluginUri>
   <PluginId>://ShishovLab1.Plugin/1.0.0.0</PluginId>
   <Trust PublicKeyToken="">Default</Trust>
-  <ReleaseDate>2014-10-08</ReleaseDate>
+  <ReleaseDate>2014-10-29</ReleaseDate>
   <Author>Shishov Boris</Author>
   <AppVersion>0.1</AppVersion>
   <Modules>
-    <Module TypeName="ShishovLab1.Module, ShishovLab1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <Module TypeName="ShishovLab1.MainModule, ShishovLab1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       
     </Module>
   </Modules>

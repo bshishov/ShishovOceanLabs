@@ -48,7 +48,7 @@ namespace ShishovLab1
             {
                 // Please fill this method with your modules with lines like this:
                 //yield return new ModuleReference(typeof(Module));
-                yield return new ModuleReference(typeof(Module));
+                yield return new ModuleReference(typeof(MainModule));
 
             }
         }
