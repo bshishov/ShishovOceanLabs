@@ -35,12 +35,15 @@ namespace ShishovLab1
         /// </summary>
         public void Integrate()
         {
-            PetrelLogger.InfoOutputWindow("Module integration");
-            
+            PetrelLogger.InfoOutputWindow("Module integration");            
+
             // Register MainWorkstep
+            var groupName = "Shishov Ocean Labs";
+            var group = PetrelSystem.WorkflowEditor.RegisteredWorksteps.Processes.FindOrCreateWorkstepGroup(groupName);
+
             ShishovLab2Workstep mainworkstepInstance = new ShishovLab2Workstep();
-            PetrelSystem.WorkflowEditor.Add(mainworkstepInstance);
-            PetrelSystem.ProcessDiagram.Add(new Slb.Ocean.Petrel.Workflow.WorkstepProcessWrapper(mainworkstepInstance), "Plug-ins");
+            PetrelSystem.WorkflowEditor.Add(mainworkstepInstance, group);
+            PetrelSystem.ProcessDiagram.Add(new Slb.Ocean.Petrel.Workflow.WorkstepProcessWrapper(mainworkstepInstance), groupName);
         }
 
         /// <summary>

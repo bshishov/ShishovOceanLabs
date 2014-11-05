@@ -48,7 +48,7 @@ namespace ShishovLab1
             {
                 return "8379c3e3-a9c2-4a06-a365-bc31fe93cd9d";
             }
-        }
+        }        
         #endregion
 
         #region IExecutorSource Members and Executor class
@@ -75,6 +75,9 @@ namespace ShishovLab1
                 this.context = context;
             }
 
+            private const string _propFormat = "{0} ({1}) upscaled";
+            private const string _logFormat = "{0} [{1}] = {2}";
+
             public override void ExecuteSimple()
             {
                 Property prop = null;
@@ -89,8 +92,8 @@ namespace ShishovLab1
                     trans.Lock(grid.PropertyCollection); 
                     
                     // создаем новое свойство и задаем его имя                    
-                    prop = grid.PropertyCollection.CreateProperty(wellLog.WellLogVersion.Template);                     
-                    prop.Name = string.Format("Upscale Prop {0}", wellLog.Borehole.Description.Name);
+                    prop = grid.PropertyCollection.CreateProperty(wellLog.WellLogVersion.Template);
+                    prop.Name = string.Format(_propFormat, wellLog.Name, wellLog.Borehole.Description.Name);
                     
                     // получаем перечислитель замеров каротажки в явном виде
                     var enumSamples = wellLog.Samples.GetEnumerator();                    
@@ -154,7 +157,7 @@ namespace ShishovLab1
                             
                             // теперь вычисляем усредненное значение свойства
                             avg = (float)(total / numSamples);
-                            PetrelLogger.InfoOutputWindow(string.Format("ShishovLab2Workstep, ячейка - {0}, значение - {1}", cellIndex.ToString(), avg));
+                            PetrelLogger.InfoOutputWindow(string.Format(_logFormat, prop.Name, cellIndex.ToString(), avg));
                         }
                         
                         // и записываем его в новое свойство сетки
@@ -198,28 +201,28 @@ namespace ShishovLab1
             private int shishovNumCells;
             private Slb.Ocean.Petrel.DomainObject.PillarGrid.Property shishovResultProperty;
 
-            [Description("ShishovWellLog", "Каротажная кривая")]
+            [Description("Well Log", "Каротажная кривая")]
             public Slb.Ocean.Petrel.DomainObject.Well.WellLog ShishovWellLog
             {
                 internal get { return this.shishovWellLog; }
                 set { this.shishovWellLog = value; }
             }
 
-            [Description("ShishovGrid", "3D-сетка из модели")]
+            [Description("Grid", "3D-сетка из модели")]
             public Slb.Ocean.Petrel.DomainObject.PillarGrid.Grid ShishovGrid
             {
                 internal get { return this.shishovGrid; }
                 set { this.shishovGrid = value; }
             }
 
-            [Description("ShishovNumCells", "Количество ячеек")]
+            [Description("Num Cells", "Количество ячеек")]
             public int ShishovNumCells
             {
                 get { return this.shishovNumCells; }
                 internal set { this.shishovNumCells = value; }
             }
 
-            [Description("ShishovResultProperty", "Результирующее свойство сетки")]
+            [Description("Property", "Результирующее свойство сетки")]
             public Slb.Ocean.Petrel.DomainObject.PillarGrid.Property ShishovResultProperty
             {
                 get { return this.shishovResultProperty; }
@@ -300,7 +303,7 @@ namespace ShishovLab1
             /// </summary>
             public string Name
             {
-                get { return "ShishovLab2Workstep"; }
+                get { return "Lab2 workstep (Shishov)"; }
             }
             /// <summary>
             /// Gets the short description of MainWorkstep
@@ -314,13 +317,11 @@ namespace ShishovLab1
             /// </summary>
             public string Description
             {
-                get { return "Рабочий шаг студента Шишов группы AC-10-04"; }
+                get { return "Лабораторная работа №2. Автор Шишов Борис (AC-10-04)"; }
             }
 
             #endregion
         }
-        #endregion
-
-
+        #endregion        
     }
 }
