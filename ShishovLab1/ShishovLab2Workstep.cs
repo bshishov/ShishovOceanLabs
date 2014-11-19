@@ -323,5 +323,21 @@ namespace ShishovLab1
             #endregion
         }
         #endregion        
+
+        public class UIFactory : WorkflowEditorUIFactory
+        {
+            /// <summary>
+            /// This method creates the dialog UI for the given workstep, arguments
+            /// and context.
+            /// </summary>
+            /// <param name="workstep">the workstep instance</param>
+            /// <param name="argumentPackage">the arguments to pass to the UI</param>
+            /// <param name="context">the underlying context in which the UI is being used</param>
+            /// <returns>a Windows.Forms.Control to edit the argument package with</returns>
+            protected override System.Windows.Forms.Control CreateDialogUICore(Workstep workstep, object argumentPackage, WorkflowContext context)
+            {
+                return new WorkstepUI((ShishovLab2Workstep)workstep, (Arguments)argumentPackage, context);
+            }
+        }
     }
 }

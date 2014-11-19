@@ -75,6 +75,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WorkstepUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkstepUI.designer.cs">
+      <DependentUpon>WorkstepUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShishovLab2Workstep.cs" />
     <Compile Include="MenuExtension.cs" />
     <Compile Include="MainModule.cs" />
@@ -97,6 +103,11 @@
       <ProductName>.NET Framework 3.5</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WorkstepUI.resx">
+      <DependentUpon>WorkstepUI.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

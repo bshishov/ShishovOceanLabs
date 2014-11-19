@@ -43,7 +43,8 @@ namespace ShishovLab1
 
             ShishovLab2Workstep mainworkstepInstance = new ShishovLab2Workstep();
             PetrelSystem.WorkflowEditor.Add(mainworkstepInstance, group);
-            PetrelSystem.ProcessDiagram.Add(new Slb.Ocean.Petrel.Workflow.WorkstepProcessWrapper(mainworkstepInstance), groupName);
+            PetrelSystem.WorkflowEditor.AddUIFactory<ShishovLab2Workstep.Arguments>(new ShishovLab2Workstep.UIFactory());
+            PetrelSystem.ProcessDiagram.Add(new Slb.Ocean.Petrel.Workflow.WorkstepProcessWrapper(mainworkstepInstance), groupName);            
         }
 
         /// <summary>
