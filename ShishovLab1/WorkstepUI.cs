@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 using Slb.Ocean.Petrel.Workflow;
 using Slb.Ocean.Core;
+using System.Diagnostics;
 
 namespace ShishovLab1
 {
@@ -11,7 +12,7 @@ namespace ShishovLab1
     /// This class is the user interface which forms the focus for the capabilities offered by the process.  
     /// This often includes UI to set up arguments and interactively run a batch part expressed as a workstep.
     /// </summary>
-    partial class WorkstepUI : UserControl
+    public partial class WorkstepUI : UserControl
     {
         private ShishovLab2Workstep workstep;
         /// <summary>
@@ -38,8 +39,56 @@ namespace ShishovLab1
             this.context = context;
         }
 
+#if DEBUG
+        public WorkstepUI()
+        {
+            InitializeComponent();
+            this.workstep = null;
+            this.args = null;
+            this.context = null;
+            Debug.WriteLine("[Debug]: dialog created");
+        }
+#endif
+
         private void WorkstepUI_Load(object sender, EventArgs e)
         {
-            this.textBox1.Text = args.ShishovGrid != null ? args.ShishovGrid.Name : "None grid specified";
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainLayoutGrid_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void NameCaptionLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NameLabel_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NameLabel_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NameLabel_Click_3(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
+

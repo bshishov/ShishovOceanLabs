@@ -17,7 +17,7 @@ namespace ShishovLab1
     /// This class contains all the methods and subclasses of the MainWorkstep.
     /// Worksteps are displayed in the workflow editor.
     /// </summary>
-    class ShishovLab2Workstep : Workstep<ShishovLab2Workstep.Arguments>, IExecutorSource, IAppearance, IDescriptionSource
+    public class ShishovLab2Workstep : Workstep<ShishovLab2Workstep.Arguments>, IExecutorSource, IAppearance, IDescriptionSource
     {
         #region Overridden Workstep methods
 
@@ -338,6 +338,13 @@ namespace ShishovLab1
             {
                 return new WorkstepUI((ShishovLab2Workstep)workstep, (Arguments)argumentPackage, context);
             }
+
+#if DEBUG
+            public System.Windows.Forms.Control CreateDebugUI()
+            {                
+                return new WorkstepUI();
+            }
+#endif
         }
     }
 }

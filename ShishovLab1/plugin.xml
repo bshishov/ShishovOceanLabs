@@ -6,7 +6,7 @@
   <PluginUri>http://shishov.no-ip.org/</PluginUri>
   <PluginId>://ShishovLab1.Plugin/1.0.0.0</PluginId>
   <Trust PublicKeyToken="">Default</Trust>
-  <ReleaseDate>2014-11-19</ReleaseDate>
+  <ReleaseDate>2014-12-03</ReleaseDate>
   <Author>Shishov Boris</Author>
   <AppVersion>0.1</AppVersion>
   <Modules>

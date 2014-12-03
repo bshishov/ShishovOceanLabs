@@ -3,16 +3,38 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShishovPlugin", "ShishovLab1\ShishovPlugin.csproj", "{829A40D6-F51E-4081-BE47-0F386D2EAC6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShishovUITest", "ShishovUITest\ShishovUITest.csproj", "{FF05B786-06CF-42C3-B5B6-A06DE2E9A2D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{829A40D6-F51E-4081-BE47-0F386D2EAC6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{829A40D6-F51E-4081-BE47-0F386D2EAC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{829A40D6-F51E-4081-BE47-0F386D2EAC6B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{829A40D6-F51E-4081-BE47-0F386D2EAC6B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{829A40D6-F51E-4081-BE47-0F386D2EAC6B}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{829A40D6-F51E-4081-BE47-0F386D2EAC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{829A40D6-F51E-4081-BE47-0F386D2EAC6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{829A40D6-F51E-4081-BE47-0F386D2EAC6B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{829A40D6-F51E-4081-BE47-0F386D2EAC6B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{829A40D6-F51E-4081-BE47-0F386D2EAC6B}.Release|x86.ActiveCfg = Release|Any CPU
+		{FF05B786-06CF-42C3-B5B6-A06DE2E9A2D6}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{FF05B786-06CF-42C3-B5B6-A06DE2E9A2D6}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{FF05B786-06CF-42C3-B5B6-A06DE2E9A2D6}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{FF05B786-06CF-42C3-B5B6-A06DE2E9A2D6}.Debug|x86.ActiveCfg = Debug|x86
+		{FF05B786-06CF-42C3-B5B6-A06DE2E9A2D6}.Debug|x86.Build.0 = Debug|x86
+		{FF05B786-06CF-42C3-B5B6-A06DE2E9A2D6}.Release|Any CPU.ActiveCfg = Release|x86
+		{FF05B786-06CF-42C3-B5B6-A06DE2E9A2D6}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{FF05B786-06CF-42C3-B5B6-A06DE2E9A2D6}.Release|Mixed Platforms.Build.0 = Release|x86
+		{FF05B786-06CF-42C3-B5B6-A06DE2E9A2D6}.Release|x86.ActiveCfg = Release|x86
+		{FF05B786-06CF-42C3-B5B6-A06DE2E9A2D6}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
