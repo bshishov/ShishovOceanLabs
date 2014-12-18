@@ -66,34 +66,33 @@ namespace ShishovLab1
 
         public class Executor : Slb.Ocean.Petrel.Workflow.Executor
         {
-            Arguments arguments;
-            WorkflowRuntimeContext context;
+            readonly Arguments _arguments;
+            WorkflowRuntimeContext _context;
 
             public Executor(Arguments arguments, WorkflowRuntimeContext context)
             {
-                this.arguments = arguments;
-                this.context = context;
+                _arguments = arguments;
+                _context = context;
             }
 
-            private const string _propFormat = "{0} ({1}) upscaled";
-            private const string _logFormat = "{0} [{1}] = {2}";
+            private const string PropFormat = "{0} ({1}) upscaled";
+            private const string LogFormat = "{0} [{1}] = {2}";
 
             public override void ExecuteSimple()
             {
-                Property prop = null;
                 int count = 0;
-                var grid = arguments.ShishovGrid;
-                var wellLog = arguments.ShishovWellLog;
+                var grid = _arguments.ShishovGrid;
+                var wellLog = _arguments.ShishovWellLog;
 
                 // все действия по изменению данных строго внутри транзакции
-                using (ITransaction trans = DataManager.NewTransaction()) 
+                using (var trans = DataManager.NewTransaction()) 
                 {
                     // запрашиваем исключительный доступ к свойствам сетки
                     trans.Lock(grid.PropertyCollection); 
                     
                     // создаем новое свойство и задаем его имя                    
-                    prop = grid.PropertyCollection.CreateProperty(wellLog.WellLogVersion.Template);
-                    prop.Name = string.Format(_propFormat, wellLog.Name, wellLog.Borehole.Description.Name);
+                    Property prop = grid.PropertyCollection.CreateProperty(wellLog.WellLogVersion.Template);
+                    prop.Name = string.Format(PropFormat, wellLog.Name, wellLog.Borehole.Description.Name);
                     
                     // получаем перечислитель замеров каротажки в явном виде
                     var enumSamples = wellLog.Samples.GetEnumerator();                    
@@ -140,8 +139,8 @@ namespace ShishovLab1
                         // если текущее значение глубины замера внутри текущей ячейки
                         if (enumSamples.Current.MD <= leavingMD)
                         {
-                            int numSamples = 1;
-                            float total = enumSamples.Current.Value;
+                            var numSamples = 1;
+                            var total = enumSamples.Current.Value;
                             
                             // вручную проматываем замеры каротажной кривой в этой ячейке
                             while (enumSamples.MoveNext())
@@ -157,7 +156,7 @@ namespace ShishovLab1
                             
                             // теперь вычисляем усредненное значение свойства
                             avg = (float)(total / numSamples);
-                            PetrelLogger.InfoOutputWindow(string.Format(_logFormat, prop.Name, cellIndex.ToString(), avg));
+                            PetrelLogger.InfoOutputWindow(string.Format(LogFormat, prop.Name, cellIndex.ToString(), avg));
                         }
                         
                         // и записываем его в новое свойство сетки
@@ -166,8 +165,8 @@ namespace ShishovLab1
                         enteringSegment = leavingSegment;
                     }
 
-                    arguments.ShishovNumCells = count;
-                    arguments.ShishovResultProperty = prop;
+                    _arguments.ShishovNumCells = count;
+                    _arguments.ShishovResultProperty = prop;
                     // если проблем нет, следующая строчка создаст наше свойство
                     trans.Commit();                    
                 }
@@ -196,37 +195,37 @@ namespace ShishovLab1
             {
             }
 
-            private Slb.Ocean.Petrel.DomainObject.Well.WellLog shishovWellLog;
-            private Slb.Ocean.Petrel.DomainObject.PillarGrid.Grid shishovGrid;
-            private int shishovNumCells;
-            private Slb.Ocean.Petrel.DomainObject.PillarGrid.Property shishovResultProperty;
+            private Slb.Ocean.Petrel.DomainObject.Well.WellLog _shishovWellLog;
+            private Slb.Ocean.Petrel.DomainObject.PillarGrid.Grid _shishovGrid;
+            private int _shishovNumCells;
+            private Slb.Ocean.Petrel.DomainObject.PillarGrid.Property _shishovResultProperty;
 
             [Description("Well Log", "Каротажная кривая")]
             public Slb.Ocean.Petrel.DomainObject.Well.WellLog ShishovWellLog
             {
-                internal get { return this.shishovWellLog; }
-                set { this.shishovWellLog = value; }
+                internal get { return this._shishovWellLog; }
+                set { this._shishovWellLog = value; }
             }
 
             [Description("Grid", "3D-сетка из модели")]
             public Slb.Ocean.Petrel.DomainObject.PillarGrid.Grid ShishovGrid
             {
-                internal get { return this.shishovGrid; }
-                set { this.shishovGrid = value; }
+                internal get { return this._shishovGrid; }
+                set { this._shishovGrid = value; }
             }
 
             [Description("Num Cells", "Количество ячеек")]
             public int ShishovNumCells
             {
-                get { return this.shishovNumCells; }
-                internal set { this.shishovNumCells = value; }
+                get { return this._shishovNumCells; }
+                internal set { this._shishovNumCells = value; }
             }
 
             [Description("Property", "Результирующее свойство сетки")]
             public Slb.Ocean.Petrel.DomainObject.PillarGrid.Property ShishovResultProperty
             {
-                get { return this.shishovResultProperty; }
-                internal set { this.shishovResultProperty = value; }
+                get { return this._shishovResultProperty; }
+                internal set { this._shishovResultProperty = value; }
             }
 
 
@@ -338,13 +337,6 @@ namespace ShishovLab1
             {
                 return new WorkstepUI((ShishovLab2Workstep)workstep, (Arguments)argumentPackage, context);
             }
-
-#if DEBUG
-            public System.Windows.Forms.Control CreateDebugUI()
-            {                
-                return new WorkstepUI();
-            }
-#endif
         }
     }
 }

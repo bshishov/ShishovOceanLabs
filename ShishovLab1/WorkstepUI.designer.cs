@@ -36,13 +36,13 @@ namespace ShishovLab1
             this.AuthorCaptionLabel = new System.Windows.Forms.Label();
             this.AuthorLabel = new System.Windows.Forms.Label();
             this.SourceCaptionLabel = new System.Windows.Forms.Label();
-            this.ParamValueLayoutGrid = new System.Windows.Forms.TableLayoutPanel();
-            this.ParamNameCaption = new System.Windows.Forms.Label();
-            this.ValueTextBox = new System.Windows.Forms.TextBox();
-            this.ValueDropTarget = new Slb.Ocean.Petrel.UI.DropTarget();
+            this.WellLogLayoutGrid = new System.Windows.Forms.TableLayoutPanel();
+            this.WellLogNameCaption = new System.Windows.Forms.Label();
+            this.WellLogValue = new Slb.Ocean.Petrel.UI.Controls.PresentationBox();
+            this.WellLogDropTarget = new Slb.Ocean.Petrel.UI.DropTarget();
             this.GridGrid = new System.Windows.Forms.TableLayoutPanel();
             this.GridCaptionLabel = new System.Windows.Forms.Label();
-            this.GridValue = new System.Windows.Forms.TextBox();
+            this.GridValue = new Slb.Ocean.Petrel.UI.Controls.PresentationBox();
             this.GridDropTarget = new Slb.Ocean.Petrel.UI.DropTarget();
             this.ResultsCaptionLabel = new System.Windows.Forms.Label();
             this.NumCellsGrid = new System.Windows.Forms.TableLayoutPanel();
@@ -51,13 +51,13 @@ namespace ShishovLab1
             this.CreatedPropertyGrid = new System.Windows.Forms.TableLayoutPanel();
             this.CreatedPropertyCaptionLabel = new System.Windows.Forms.Label();
             this.ShowButton = new System.Windows.Forms.Button();
-            this.CreatedPropertyValue = new System.Windows.Forms.TextBox();
+            this.CreatedPropertyValue = new Slb.Ocean.Petrel.UI.Controls.PresentationBox();
             this.DialogButtonsLayout = new System.Windows.Forms.TableLayoutPanel();
             this.ApplyButton = new System.Windows.Forms.Button();
             this.OkButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.mainLayoutGrid.SuspendLayout();
-            this.ParamValueLayoutGrid.SuspendLayout();
+            this.WellLogLayoutGrid.SuspendLayout();
             this.GridGrid.SuspendLayout();
             this.NumCellsGrid.SuspendLayout();
             this.CreatedPropertyGrid.SuspendLayout();
@@ -75,7 +75,7 @@ namespace ShishovLab1
             this.mainLayoutGrid.Controls.Add(this.AuthorCaptionLabel, 0, 4);
             this.mainLayoutGrid.Controls.Add(this.AuthorLabel, 0, 5);
             this.mainLayoutGrid.Controls.Add(this.SourceCaptionLabel, 0, 6);
-            this.mainLayoutGrid.Controls.Add(this.ParamValueLayoutGrid, 0, 7);
+            this.mainLayoutGrid.Controls.Add(this.WellLogLayoutGrid, 0, 7);
             this.mainLayoutGrid.Controls.Add(this.GridGrid, 0, 8);
             this.mainLayoutGrid.Controls.Add(this.ResultsCaptionLabel, 0, 9);
             this.mainLayoutGrid.Controls.Add(this.NumCellsGrid, 0, 10);
@@ -98,8 +98,8 @@ namespace ShishovLab1
             this.mainLayoutGrid.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.mainLayoutGrid.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.mainLayoutGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.mainLayoutGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.mainLayoutGrid.Size = new System.Drawing.Size(491, 396);
+            this.mainLayoutGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.mainLayoutGrid.Size = new System.Drawing.Size(432, 373);
             this.mainLayoutGrid.TabIndex = 5;
             // 
             // NameCaptionLabel
@@ -116,10 +116,10 @@ namespace ShishovLab1
             // 
             this.NameLabel.AutoSize = true;
             this.NameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NameLabel.Location = new System.Drawing.Point(3, 16);
-            this.NameLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.NameLabel.Location = new System.Drawing.Point(3, 18);
+            this.NameLabel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(485, 13);
+            this.NameLabel.Size = new System.Drawing.Size(426, 13);
             this.NameLabel.TabIndex = 2;
             this.NameLabel.Text = "<Краткое описание рабочего шага>";
             // 
@@ -127,7 +127,7 @@ namespace ShishovLab1
             // 
             this.DescriptionCaptionLabel.AutoSize = true;
             this.DescriptionCaptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DescriptionCaptionLabel.Location = new System.Drawing.Point(3, 39);
+            this.DescriptionCaptionLabel.Location = new System.Drawing.Point(3, 41);
             this.DescriptionCaptionLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.DescriptionCaptionLabel.Name = "DescriptionCaptionLabel";
             this.DescriptionCaptionLabel.Size = new System.Drawing.Size(65, 13);
@@ -138,10 +138,10 @@ namespace ShishovLab1
             // 
             this.DescriptionLabel.AutoSize = true;
             this.DescriptionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DescriptionLabel.Location = new System.Drawing.Point(3, 55);
-            this.DescriptionLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.DescriptionLabel.Location = new System.Drawing.Point(3, 59);
+            this.DescriptionLabel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(485, 26);
+            this.DescriptionLabel.Size = new System.Drawing.Size(426, 26);
             this.DescriptionLabel.TabIndex = 7;
             this.DescriptionLabel.Text = "< Полное описание рабочего шага < Полное описание рабочего шага >< Полное описани" +
     "е рабочего шага >< Полное описание рабочего шага > ";
@@ -150,7 +150,7 @@ namespace ShishovLab1
             // 
             this.AuthorCaptionLabel.AutoSize = true;
             this.AuthorCaptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AuthorCaptionLabel.Location = new System.Drawing.Point(3, 91);
+            this.AuthorCaptionLabel.Location = new System.Drawing.Point(3, 95);
             this.AuthorCaptionLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.AuthorCaptionLabel.Name = "AuthorCaptionLabel";
             this.AuthorCaptionLabel.Size = new System.Drawing.Size(42, 13);
@@ -161,10 +161,10 @@ namespace ShishovLab1
             // 
             this.AuthorLabel.AutoSize = true;
             this.AuthorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AuthorLabel.Location = new System.Drawing.Point(3, 107);
-            this.AuthorLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.AuthorLabel.Location = new System.Drawing.Point(3, 113);
+            this.AuthorLabel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.AuthorLabel.Name = "AuthorLabel";
-            this.AuthorLabel.Size = new System.Drawing.Size(485, 13);
+            this.AuthorLabel.Size = new System.Drawing.Size(426, 13);
             this.AuthorLabel.TabIndex = 9;
             this.AuthorLabel.Text = "Шишов Борис АС-10-4";
             // 
@@ -172,62 +172,63 @@ namespace ShishovLab1
             // 
             this.SourceCaptionLabel.AutoSize = true;
             this.SourceCaptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SourceCaptionLabel.Location = new System.Drawing.Point(3, 130);
+            this.SourceCaptionLabel.Location = new System.Drawing.Point(3, 136);
             this.SourceCaptionLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.SourceCaptionLabel.Name = "SourceCaptionLabel";
             this.SourceCaptionLabel.Size = new System.Drawing.Size(114, 13);
             this.SourceCaptionLabel.TabIndex = 5;
             this.SourceCaptionLabel.Text = "Исходные данные";
             // 
-            // ParamValueLayoutGrid
+            // WellLogLayoutGrid
             // 
-            this.ParamValueLayoutGrid.AutoSize = true;
-            this.ParamValueLayoutGrid.ColumnCount = 3;
-            this.ParamValueLayoutGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.ParamValueLayoutGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.ParamValueLayoutGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ParamValueLayoutGrid.Controls.Add(this.ParamNameCaption, 0, 0);
-            this.ParamValueLayoutGrid.Controls.Add(this.ValueTextBox, 2, 0);
-            this.ParamValueLayoutGrid.Controls.Add(this.ValueDropTarget, 1, 0);
-            this.ParamValueLayoutGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ParamValueLayoutGrid.Location = new System.Drawing.Point(0, 146);
-            this.ParamValueLayoutGrid.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.ParamValueLayoutGrid.Name = "ParamValueLayoutGrid";
-            this.ParamValueLayoutGrid.RowCount = 1;
-            this.ParamValueLayoutGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ParamValueLayoutGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.ParamValueLayoutGrid.Size = new System.Drawing.Size(491, 23);
-            this.ParamValueLayoutGrid.TabIndex = 8;
+            this.WellLogLayoutGrid.AutoSize = true;
+            this.WellLogLayoutGrid.ColumnCount = 3;
+            this.WellLogLayoutGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.WellLogLayoutGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.WellLogLayoutGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.WellLogLayoutGrid.Controls.Add(this.WellLogNameCaption, 0, 0);
+            this.WellLogLayoutGrid.Controls.Add(this.WellLogValue, 2, 0);
+            this.WellLogLayoutGrid.Controls.Add(this.WellLogDropTarget, 1, 0);
+            this.WellLogLayoutGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WellLogLayoutGrid.Location = new System.Drawing.Point(0, 154);
+            this.WellLogLayoutGrid.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.WellLogLayoutGrid.Name = "WellLogLayoutGrid";
+            this.WellLogLayoutGrid.RowCount = 1;
+            this.WellLogLayoutGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.WellLogLayoutGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.WellLogLayoutGrid.Size = new System.Drawing.Size(432, 23);
+            this.WellLogLayoutGrid.TabIndex = 8;
             // 
-            // ParamNameCaption
+            // WellLogNameCaption
             // 
-            this.ParamNameCaption.AutoSize = true;
-            this.ParamNameCaption.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ParamNameCaption.Location = new System.Drawing.Point(3, 0);
-            this.ParamNameCaption.Name = "ParamNameCaption";
-            this.ParamNameCaption.Size = new System.Drawing.Size(114, 23);
-            this.ParamNameCaption.TabIndex = 3;
-            this.ParamNameCaption.Text = "Каротажная кривая:";
-            this.ParamNameCaption.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.WellLogNameCaption.AutoSize = true;
+            this.WellLogNameCaption.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WellLogNameCaption.Location = new System.Drawing.Point(3, 0);
+            this.WellLogNameCaption.Name = "WellLogNameCaption";
+            this.WellLogNameCaption.Size = new System.Drawing.Size(114, 23);
+            this.WellLogNameCaption.TabIndex = 3;
+            this.WellLogNameCaption.Text = "Каротажная кривая:";
+            this.WellLogNameCaption.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // ValueTextBox
+            // WellLogValue
             // 
-            this.ValueTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ValueTextBox.Location = new System.Drawing.Point(150, 2);
-            this.ValueTextBox.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.ValueTextBox.Name = "ValueTextBox";
-            this.ValueTextBox.Size = new System.Drawing.Size(341, 20);
-            this.ValueTextBox.TabIndex = 4;
+            this.WellLogValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WellLogValue.Location = new System.Drawing.Point(150, 1);
+            this.WellLogValue.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.WellLogValue.Name = "WellLogValue";
+            this.WellLogValue.Size = new System.Drawing.Size(282, 22);
+            this.WellLogValue.TabIndex = 4;
             // 
-            // ValueDropTarget
+            // WellLogDropTarget
             // 
-            this.ValueDropTarget.AllowDrop = true;
-            this.ValueDropTarget.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ValueDropTarget.Location = new System.Drawing.Point(120, 0);
-            this.ValueDropTarget.Margin = new System.Windows.Forms.Padding(0);
-            this.ValueDropTarget.Name = "ValueDropTarget";
-            this.ValueDropTarget.Size = new System.Drawing.Size(30, 23);
-            this.ValueDropTarget.TabIndex = 5;
+            this.WellLogDropTarget.AllowDrop = true;
+            this.WellLogDropTarget.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WellLogDropTarget.Location = new System.Drawing.Point(120, 0);
+            this.WellLogDropTarget.Margin = new System.Windows.Forms.Padding(0);
+            this.WellLogDropTarget.Name = "WellLogDropTarget";
+            this.WellLogDropTarget.Size = new System.Drawing.Size(30, 23);
+            this.WellLogDropTarget.TabIndex = 5;
+            this.WellLogDropTarget.DragDrop += new System.Windows.Forms.DragEventHandler(this.WellLog_DragDrop);
             // 
             // GridGrid
             // 
@@ -240,13 +241,13 @@ namespace ShishovLab1
             this.GridGrid.Controls.Add(this.GridValue, 2, 0);
             this.GridGrid.Controls.Add(this.GridDropTarget, 1, 0);
             this.GridGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridGrid.Location = new System.Drawing.Point(0, 169);
-            this.GridGrid.Margin = new System.Windows.Forms.Padding(0);
+            this.GridGrid.Location = new System.Drawing.Point(0, 182);
+            this.GridGrid.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.GridGrid.Name = "GridGrid";
             this.GridGrid.RowCount = 1;
             this.GridGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.GridGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.GridGrid.Size = new System.Drawing.Size(491, 23);
+            this.GridGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.GridGrid.Size = new System.Drawing.Size(432, 23);
             this.GridGrid.TabIndex = 10;
             // 
             // GridCaptionLabel
@@ -257,16 +258,16 @@ namespace ShishovLab1
             this.GridCaptionLabel.Name = "GridCaptionLabel";
             this.GridCaptionLabel.Size = new System.Drawing.Size(114, 23);
             this.GridCaptionLabel.TabIndex = 3;
-            this.GridCaptionLabel.Text = "Каротажная кривая:";
+            this.GridCaptionLabel.Text = "3D-сетка:";
             this.GridCaptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // GridValue
             // 
             this.GridValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridValue.Location = new System.Drawing.Point(150, 2);
-            this.GridValue.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.GridValue.Location = new System.Drawing.Point(150, 1);
+            this.GridValue.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.GridValue.Name = "GridValue";
-            this.GridValue.Size = new System.Drawing.Size(341, 20);
+            this.GridValue.Size = new System.Drawing.Size(282, 22);
             this.GridValue.TabIndex = 4;
             // 
             // GridDropTarget
@@ -278,12 +279,13 @@ namespace ShishovLab1
             this.GridDropTarget.Name = "GridDropTarget";
             this.GridDropTarget.Size = new System.Drawing.Size(30, 23);
             this.GridDropTarget.TabIndex = 5;
+            this.GridDropTarget.DragDrop += new System.Windows.Forms.DragEventHandler(this.ValueDropTarget_DragDrop);
             // 
             // ResultsCaptionLabel
             // 
             this.ResultsCaptionLabel.AutoSize = true;
             this.ResultsCaptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ResultsCaptionLabel.Location = new System.Drawing.Point(3, 202);
+            this.ResultsCaptionLabel.Location = new System.Drawing.Point(3, 215);
             this.ResultsCaptionLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.ResultsCaptionLabel.Name = "ResultsCaptionLabel";
             this.ResultsCaptionLabel.Size = new System.Drawing.Size(128, 13);
@@ -300,12 +302,12 @@ namespace ShishovLab1
             this.NumCellsGrid.Controls.Add(this.NumCellsValue, 0, 0);
             this.NumCellsGrid.Controls.Add(this.NumCellsCaption, 0, 0);
             this.NumCellsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NumCellsGrid.Location = new System.Drawing.Point(0, 218);
-            this.NumCellsGrid.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.NumCellsGrid.Location = new System.Drawing.Point(0, 233);
+            this.NumCellsGrid.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.NumCellsGrid.Name = "NumCellsGrid";
             this.NumCellsGrid.RowCount = 1;
             this.NumCellsGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.NumCellsGrid.Size = new System.Drawing.Size(491, 13);
+            this.NumCellsGrid.Size = new System.Drawing.Size(432, 13);
             this.NumCellsGrid.TabIndex = 11;
             // 
             // NumCellsValue
@@ -314,7 +316,7 @@ namespace ShishovLab1
             this.NumCellsValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NumCellsValue.Location = new System.Drawing.Point(123, 0);
             this.NumCellsValue.Name = "NumCellsValue";
-            this.NumCellsValue.Size = new System.Drawing.Size(365, 13);
+            this.NumCellsValue.Size = new System.Drawing.Size(306, 13);
             this.NumCellsValue.TabIndex = 4;
             this.NumCellsValue.Text = "<количество ячеек>";
             this.NumCellsValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -341,12 +343,12 @@ namespace ShishovLab1
             this.CreatedPropertyGrid.Controls.Add(this.ShowButton, 2, 0);
             this.CreatedPropertyGrid.Controls.Add(this.CreatedPropertyValue, 1, 0);
             this.CreatedPropertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CreatedPropertyGrid.Location = new System.Drawing.Point(0, 231);
-            this.CreatedPropertyGrid.Margin = new System.Windows.Forms.Padding(0);
+            this.CreatedPropertyGrid.Location = new System.Drawing.Point(0, 251);
+            this.CreatedPropertyGrid.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.CreatedPropertyGrid.Name = "CreatedPropertyGrid";
             this.CreatedPropertyGrid.RowCount = 1;
             this.CreatedPropertyGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.CreatedPropertyGrid.Size = new System.Drawing.Size(491, 26);
+            this.CreatedPropertyGrid.Size = new System.Drawing.Size(432, 26);
             this.CreatedPropertyGrid.TabIndex = 12;
             // 
             // CreatedPropertyCaptionLabel
@@ -363,13 +365,15 @@ namespace ShishovLab1
             // ShowButton
             // 
             this.ShowButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ShowButton.Location = new System.Drawing.Point(391, 0);
+            this.ShowButton.Enabled = false;
+            this.ShowButton.Location = new System.Drawing.Point(332, 0);
             this.ShowButton.Margin = new System.Windows.Forms.Padding(0);
             this.ShowButton.Name = "ShowButton";
             this.ShowButton.Size = new System.Drawing.Size(100, 26);
             this.ShowButton.TabIndex = 4;
             this.ShowButton.Text = "Показать";
             this.ShowButton.UseVisualStyleBackColor = true;
+            this.ShowButton.Click += new System.EventHandler(this.ShowButton_Click);
             // 
             // CreatedPropertyValue
             // 
@@ -377,7 +381,7 @@ namespace ShishovLab1
             this.CreatedPropertyValue.Location = new System.Drawing.Point(120, 2);
             this.CreatedPropertyValue.Margin = new System.Windows.Forms.Padding(0, 2, 3, 0);
             this.CreatedPropertyValue.Name = "CreatedPropertyValue";
-            this.CreatedPropertyValue.Size = new System.Drawing.Size(268, 20);
+            this.CreatedPropertyValue.Size = new System.Drawing.Size(209, 22);
             this.CreatedPropertyValue.TabIndex = 5;
             // 
             // DialogButtonsLayout
@@ -392,56 +396,64 @@ namespace ShishovLab1
             this.DialogButtonsLayout.Controls.Add(this.OkButton, 2, 0);
             this.DialogButtonsLayout.Controls.Add(this.CancelButton, 3, 0);
             this.DialogButtonsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DialogButtonsLayout.Location = new System.Drawing.Point(3, 359);
+            this.DialogButtonsLayout.Location = new System.Drawing.Point(0, 343);
+            this.DialogButtonsLayout.Margin = new System.Windows.Forms.Padding(0);
             this.DialogButtonsLayout.Name = "DialogButtonsLayout";
             this.DialogButtonsLayout.RowCount = 1;
             this.DialogButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.DialogButtonsLayout.Size = new System.Drawing.Size(485, 34);
+            this.DialogButtonsLayout.Size = new System.Drawing.Size(432, 30);
             this.DialogButtonsLayout.TabIndex = 13;
             // 
             // ApplyButton
             // 
             this.ApplyButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ApplyButton.Location = new System.Drawing.Point(216, 12);
+            this.ApplyButton.Location = new System.Drawing.Point(132, 0);
+            this.ApplyButton.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.ApplyButton.Name = "ApplyButton";
-            this.ApplyButton.Size = new System.Drawing.Size(75, 23);
+            this.ApplyButton.Size = new System.Drawing.Size(97, 30);
             this.ApplyButton.TabIndex = 0;
             this.ApplyButton.Text = "Применить";
             this.ApplyButton.UseVisualStyleBackColor = true;
+            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
             // 
             // OkButton
             // 
             this.OkButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OkButton.Location = new System.Drawing.Point(288, 3);
+            this.OkButton.Location = new System.Drawing.Point(235, 0);
+            this.OkButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(94, 18);
+            this.OkButton.Size = new System.Drawing.Size(94, 30);
             this.OkButton.TabIndex = 1;
             this.OkButton.Text = "ОК";
             this.OkButton.UseVisualStyleBackColor = true;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
             // CancelButton
             // 
             this.CancelButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CancelButton.Location = new System.Drawing.Point(388, 3);
+            this.CancelButton.Location = new System.Drawing.Point(335, 0);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(94, 18);
+            this.CancelButton.Size = new System.Drawing.Size(97, 30);
             this.CancelButton.TabIndex = 2;
             this.CancelButton.Text = "Отмена";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // WorkstepUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.mainLayoutGrid);
+            this.MinimumSize = new System.Drawing.Size(430, 340);
             this.Name = "WorkstepUI";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(501, 406);
+            this.Size = new System.Drawing.Size(442, 383);
             this.Load += new System.EventHandler(this.WorkstepUI_Load);
             this.mainLayoutGrid.ResumeLayout(false);
             this.mainLayoutGrid.PerformLayout();
-            this.ParamValueLayoutGrid.ResumeLayout(false);
-            this.ParamValueLayoutGrid.PerformLayout();
+            this.WellLogLayoutGrid.ResumeLayout(false);
+            this.WellLogLayoutGrid.PerformLayout();
             this.GridGrid.ResumeLayout(false);
             this.GridGrid.PerformLayout();
             this.NumCellsGrid.ResumeLayout(false);
@@ -463,14 +475,14 @@ namespace ShishovLab1
         private System.Windows.Forms.Label SourceCaptionLabel;
         private System.Windows.Forms.Label ResultsCaptionLabel;
         private System.Windows.Forms.Label DescriptionLabel;
-        private System.Windows.Forms.TableLayoutPanel ParamValueLayoutGrid;
-        private System.Windows.Forms.Label ParamNameCaption;
-        private System.Windows.Forms.TextBox ValueTextBox;
+        private System.Windows.Forms.TableLayoutPanel WellLogLayoutGrid;
+        private System.Windows.Forms.Label WellLogNameCaption;
+        private Slb.Ocean.Petrel.UI.Controls.PresentationBox WellLogValue;
         private System.Windows.Forms.Label AuthorLabel;
-        private Slb.Ocean.Petrel.UI.DropTarget ValueDropTarget;
+        private Slb.Ocean.Petrel.UI.DropTarget WellLogDropTarget;
         private System.Windows.Forms.TableLayoutPanel GridGrid;
         private System.Windows.Forms.Label GridCaptionLabel;
-        private System.Windows.Forms.TextBox GridValue;
+        private Slb.Ocean.Petrel.UI.Controls.PresentationBox GridValue;
         private Slb.Ocean.Petrel.UI.DropTarget GridDropTarget;
         private System.Windows.Forms.TableLayoutPanel NumCellsGrid;
         private System.Windows.Forms.Label NumCellsCaption;
@@ -478,7 +490,7 @@ namespace ShishovLab1
         private System.Windows.Forms.Label CreatedPropertyCaptionLabel;
         private System.Windows.Forms.Label NumCellsValue;
         private System.Windows.Forms.Button ShowButton;
-        private System.Windows.Forms.TextBox CreatedPropertyValue;
+        private Slb.Ocean.Petrel.UI.Controls.PresentationBox CreatedPropertyValue;
         private System.Windows.Forms.TableLayoutPanel DialogButtonsLayout;
         private System.Windows.Forms.Button ApplyButton;
         private System.Windows.Forms.Button OkButton;

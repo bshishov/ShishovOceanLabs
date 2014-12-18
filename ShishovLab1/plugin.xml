@@ -16,6 +16,7 @@
   </Modules>
   <Assemblies>
     <Assembly Name="ShishovLab1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Assembly Name="Slb.Ocean.Petrel.UI.Controls, Version=13.1.0.0, Culture=neutral, PublicKeyToken=da9605198f529641" />
   </Assemblies>
   
   <StartMode>Startup</StartMode>

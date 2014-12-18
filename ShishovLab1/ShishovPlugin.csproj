@@ -38,6 +38,7 @@
     <Reference Include="Slb.Ocean.Petrel.Modeling, Version=13.1.0.0, Culture=neutral, PublicKeyToken=14ef4a483ef6a64b, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
+    <Reference Include="Slb.Ocean.Petrel.UI.Controls, Version=13.1.0.0, Culture=neutral, PublicKeyToken=da9605198f529641, processorArchitecture=MSIL" />
     <Reference Include="Slb.Ocean.Petrel.Well, Version=13.1.0.0, Culture=neutral, PublicKeyToken=14ef4a483ef6a64b, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
