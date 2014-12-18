@@ -1,0 +1,11 @@
+1. Регистрируется фэктори для данного воркфлоу PetrelSystem.WorkflowEditor.AddUIFactory<ShishovLab2Workstep.Arguments>(new ShishovLab2Workstep.UIFactory()); При наличии фэктори откроется кастомное окно.
+
+2. Slb.Ocean.Petrel.UI.Controls.PresentationBox - такой текстбокс с картинкой)
+Slb.Ocean.Petrel.UI.DropTarget - таргет для дропа ocean объектов.
+
+3. Реализуется наш контрол, унаследованный от UserControl, в конструктор которого и прокидывается вся информация о рабочем шаге, контексте и аргументах.
+
+4.  CoreSystem.GetService<IImageInfoFactory> - позволяет получить иконку по типу объекта. Ну на деле занимается созданием экземпляров класса Image.
+
+5. Есть специальные инструменты в visual студии, которые позволят делать небольшие изменения вроде изменения констант и т.п.
+Нужно в настройках, в во вскладке Debugging изменить галочку Break all processes when one process breaks.
